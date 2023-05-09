@@ -6,6 +6,8 @@ let activePlayer;
 let winner;
 let winnerNR;
 let gameEnded;
+let streakRot = 0;
+let streakBlau = 0;
 
 function startGame () {
     matrix = [];
@@ -21,7 +23,9 @@ function startGame () {
     kästchenXY = canvasSize / matrix.length;
     kästchenXYhälfte = kästchenXY / 2;
     kästchenXYviertel = kästchenXY / 4;
-    activePlayer = 1;
+    if ( (Math.random()) >= 0.5){activePlayer = 1}
+    else {activePlayer = 2}
+    
 }
 
 function drawPlayer1 (zeile, spalte) {
@@ -64,8 +68,10 @@ function zeichneSpielfeld(){
 function defineWinner () {
     if (winnerNR === 1) {
         winner = "Rot"
+        streakRot++
     } else if (winnerNR === 2) {
         winner = "Blau"
+        streakBlau++
     }
     gameEnded = true;
 }
@@ -78,7 +84,9 @@ function alertEnd() {
         spread: 70,
         origin: { y: 0.6 },
       });
-    console.log("Spieler " + winner + " hat gewonnen!")
+    document.getElementById("p1").innerHTML = "Spieler " + winner + " hat gewonnen!";
+    document.getElementById("p2").innerHTML = "Stand: " + streakRot + " R | " + streakBlau + " B";
+    // console.log("Spieler " + winner + " hat gewonnen!")
 }
 
 function checkForWin () {
@@ -117,7 +125,7 @@ function modifyGame(zeile, spalte) {
             activePlayer = 2;
         } else if (activePlayer === 2) {
             activePlayer = 1;
-        } else{console.error("player error")}
+        } else{console.error("player error " + activePlayer)}
     }
 }
 
@@ -158,3 +166,18 @@ function keyTyped() {
 }
 
 
+//Debug mode:
+
+/*
+
+  else if (key === 'd') {
+        modifyGame(0, 2)
+        modifyGame(0, 1)
+        modifyGame(1, 2)
+        modifyGame(1, 1)
+        modifyGame(2, 2)
+        checkForWin()
+        startGame()
+    }
+
+*/
