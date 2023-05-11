@@ -32,8 +32,24 @@ body{
     color: #FF5733
 }
 
-button {
+.button {
     color: white;
     background-color: #555;
-    padding: 0.5%
+    padding: 15px;
+    width: 50px;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #444;
+    margin-block: 2px;
+}
+
+.resetButton {
+    color: white;
+    background-color: #555;
+    padding: 15px;
+    width: 75px;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #444;
+    margin-block: 2px;
 }

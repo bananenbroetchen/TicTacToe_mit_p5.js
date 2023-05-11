@@ -173,6 +173,51 @@ function keyTyped() {
     }
 }
 
+// MOBILE VERSION BUTTONS
+
+document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.getElementsByClassName('button');
+    var resetButton = document.getElementById('reset')
+
+    for (var i = 0; i < buttons.length; i++) {
+      var button = buttons[i];
+      var buttonNumber = i + 1;
+    
+      button.addEventListener('click', function(number) {
+        return function() {
+          handleButtonClick(number);
+        }
+      }(buttonNumber));
+    }
+    
+    function handleButtonClick(number) {
+      if (number === 7) {
+        modifyGame(0, 2);
+      } else if (number === 8) {
+        modifyGame(1, 2);
+      } else if (number === 9) {
+        modifyGame(2, 2);
+      } else if (number === 4) {
+        modifyGame(0, 1);
+      } else if (number === 5) {
+        modifyGame(1, 1);
+      } else if (number === 6) {
+        modifyGame(2, 1);
+      } else if (number === 1) {
+        modifyGame(0, 0);
+      } else if (number === 2) {
+        modifyGame(1, 0);
+      } else if (number === 3) {
+        modifyGame(2, 0);
+      }
+    }
+    
+    resetButton.addEventListener('click', function() {
+        startGame();
+      });
+
+  });
+  
 
 //Debug mode:
 
