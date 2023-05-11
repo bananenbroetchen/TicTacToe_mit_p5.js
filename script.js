@@ -84,8 +84,16 @@ function alertEnd() {
         spread: 70,
         origin: { y: 0.6 },
       });
-    document.getElementById("p1").innerHTML = "Spieler " + winner + " hat gewonnen!";
-    document.getElementById("p2").innerHTML = "Stand: " + streakRot + " R | " + streakBlau + " B";
+    if (winnerNR === 1) {
+        document.getElementById("p1").innerHTML = "Spieler <span class='red-color'>" + winner + "</span> hat gewonnen!";
+        document.getElementById("p2").innerHTML = "Stand: <span class='red-color'>" + streakRot + "</span> R | <span class='blue-color'>" + streakBlau + "</span> B";
+    } else if (winnerNR === 2) {
+        document.getElementById("p1").innerHTML = "Spieler <span class='blue-color'>" + winner + "</span> hat gewonnen!";
+        document.getElementById("p2").innerHTML = "Stand: <span class='red-color'>" + streakRot + "</span> R | <span class='blue-color'>" + streakBlau + "</span> B";
+    }
+    
+    // document.getElementById("p1").innerHTML = "Spieler " + winner + " hat gewonnen!";
+    // document.getElementById("p2").innerHTML = "Stand: " + streakRot + " R | " + streakBlau + " B";
     // console.log("Spieler " + winner + " hat gewonnen!")
 }
 

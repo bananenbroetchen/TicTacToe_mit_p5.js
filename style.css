@@ -1,5 +1,39 @@
+header{
+    background-color: #333;
+    color: #fff;
+    padding: 1%;
+    text-align: center;
+}
+
+nav {
+    background-color: #555;
+    padding: 2%;
+    text-align: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    background: #333;
+    padding: 1%
+}
+
 body{
     background-color: black;
     color: ivory;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
+.blue-color {
+    color: #33C1FF
+}
+
+.red-color {
+    color: #FF5733
+}
+
+button {
+    color: white;
+    background-color: #555;
+    padding: 0.5%
 }
