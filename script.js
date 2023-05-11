@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   });
   
-mousePressed() {
+function mousePressed() {
     if (mouseX < canvasSize/3 && mouseX > 0 && mouseY < canvasSize/3 && mouseY > 0){
         modifyGame(0, 0);
     }
