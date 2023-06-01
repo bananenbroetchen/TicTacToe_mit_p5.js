@@ -111,7 +111,7 @@ function checkForWin () {
                 alertEnd()
             }
         }
-        //DIAGONAL
+        // DIAGONAL
         //LO nach RU
         if (matrix[0][0] !== 0 && matrix[0][0] === matrix[1][1] && matrix[1][1] === matrix[2][2] && matrix[2][2] === matrix[0][0])  {
             winnerNR = matrix[0][0]
